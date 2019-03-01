@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NGF</title>
+
+    <link rel="shortcut icon" href="mga_trans.png" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="checkbox.css">
+
+</head>
+
+<body>
+    <div class="row">
+        <div class="headStat">
+            <div class="container p-3">
+                <h2 class="float-left m-2"><i class="fab fa-studiovinari"></i></h2>
+                <h2 class="float-left m-2">studioVinari</h2>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="lineStyle"></div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row">
+        <form class="myContent stylus col-md-12 col-lg-6">
+            <div class="container p-5" id="gettern">
+                <div class="form-group">
+                    <label for="fullname">Name and Surname</label>
+                    <input type="text" class="form-control" id="fullname" placeholder="Aykhan Huseyn">
+                </div>
+                <div class="form-group">
+                    <label for="country">Select country</label>
+                    <select id="country" name="country" class="form-control">
+                        <option value="aze" selected>Azerbaijan</option>
+                        <option value="tur">Turkey</option>
+                        <option value="usa">USA</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="job">Select position</label>
+                    <select id="job" name="job" class="form-control">
+                        <option value="gymnast">gymnast</option>
+                        <option value="trainer" selected>trainer</option>
+                        <option value="media">media</option>
+                    </select>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <div class="form-group">
+                    <h5>Where can person access:</h5>
+                    <div class="col-4 float-left checkboxes">
+                        <input id="checkbox-1" class="checkbox-custom" name="checkbox-1" type="checkbox">
+                        <label for="checkbox-1" class="checkbox-custom-label">Saturn</label>
+                    </div>
+                    <div class="col-4 float-left checkboxes">
+                        <input id="checkbox-2" class="checkbox-custom" name="checkbox-2" type="checkbox">
+                        <label for="checkbox-2" class="checkbox-custom-label">Earth</label>
+                    </div>
+                    <div class="col-4 float-left checkboxes">
+                        <input id="checkbox-3" class="checkbox-custom" name="checkbox-3" type="checkbox">
+                        <label for="checkbox-3" class="checkbox-custom-label">Mercury</label>
+                    </div>
+                    <div class="col-4 float-left checkboxes">
+                        <input id="checkbox-4" class="checkbox-custom" name="checkbox-4" type="checkbox">
+                        <label for="checkbox-4" class="checkbox-custom-label">Pluto</label>
+                    </div>
+                    <div class="col-4 float-left checkboxes">
+                        <input id="checkbox-5" class="checkbox-custom" name="checkbox-5" type="checkbox">
+                        <label for="checkbox-5" class="checkbox-custom-label">Mars</label>
+                    </div>
+                    <div class="col-4 float-left checkboxes">
+                        <input id="checkbox-6" class="checkbox-custom" name="checkbox-6" type="checkbox">
+                        <label for="checkbox-6" class="checkbox-custom-label">Venus</label>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <div class="imgSelect d-none">
+                    <div class="form-group">
+                        <input type="file" name="person" id="person" accept=".jpg,.jpeg,.png,.svg,.gif">
+                    </div>
+                    <div class="form-group">
+                        <input type="file" name="selectBG" id="selectBG" accept=".jpg,.jpeg,.png,.svg,.gif">
+                    </div>
+                </div>
+
+                <div class="previews">
+                    <div class="form-group preview" id="person-preview">
+                        <img class="d-none">
+                    </div>
+                    <div class="form-group preview" id="selectBG-preview">
+                        <img class="d-none">
+                    </div>
+                </div>
+
+                <button class="btn btn-info btn-large btn-block" type="submit">Create</button>
+
+            </div>
+            <footer class="container">
+                <div class="lineStyle2"></div>
+                <div class="contact d-block text-center">&copy; 2019</div>
+                <div class="contactMe d-block text-center">made by <a href="http://facebook.com/aykhan.huseyn7">Aykhan
+                        Huseyn</a></div>
+            </footer>
+        </form>
+
+
+        <div class="myAccred stylus col-md-12 col-lg-6">
+            <div class="container p-5">
+                <canvas id="myCanvas" width="600" height="750">Your browser does not
+                    suppert &lt;canvas&gt; </canvas>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="canvas.js"></script>
+
+    <script>
+        document.getElementById("person-preview").addEventListener("click", function (event) {
+            event.preventDefault();
+            document.getElementById("person").click();
+        })
+        document.getElementById("selectBG-preview").addEventListener("click", function (event) {
+            event.preventDefault();
+            document.getElementById("selectBG").click();
+        })
+    </script>
+
+
+</body>
+
+</html>

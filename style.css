@@ -1,0 +1,100 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.headStat {
+    height: 120px;
+    width: 100%;
+    background-image: linear-gradient(to bottom right, red, yellow);
+    overflow: hidden;
+    border-radius: 0 0 20px 20px;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 4rem;
+    color: azure;
+    opacity: .9;
+}
+
+.lineStyle {
+    width: 100%;
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 120px;
+    left: 0;
+}
+
+.stylus {
+    width: 100%;
+    height: 850px
+}
+
+.myContent {
+    background-image: linear-gradient(to bottom right, red, yellow);
+    opacity: .88;
+}
+
+.previews {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.preview {
+    border: 2px solid #333;
+    margin: 2rem .5rem;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+
+.preview:hover {
+    cursor: pointer
+}
+
+.checkbox-input {
+    display: none
+}
+
+#person-preview {
+    background-image: url('person.png');
+    background-color: rgba(153, 153, 153, 0.44);
+    background-position: top center;
+}
+
+#selectBG-preview {
+    background-image: url('mounteen.png');
+    background-color: rgba(153, 153, 153, 0.44);
+    background-position: top center;
+}
+
+input, select {
+    opacity: .5;
+}
+
+input:hover, select:hover {
+    opacity: 1.0;
+}
+
+.lineStyle2 {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.contactMe {
+    color: teal
+}
+
+.contactMe>a {
+    text-decoration: none;
+    color: teal
+}
+
+#myCanvas {
+    border: 1px solid #333;
+    margin: auto;
+}
