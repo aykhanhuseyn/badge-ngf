@@ -4,7 +4,8 @@ var canvas = document.getElementById("myCanvas");
 var selectBG = document.getElementById('selectBG');
 // get canvas context to draw
 var context = canvas.getContext("2d");
-
+// get fullname 
+let fullname = document.getElementById("fullname").value;
 
 // add event listener to know when file has been selected
 selectBG.addEventListener('change', function (event) {
@@ -58,32 +59,28 @@ person.addEventListener('change', function (event) {
 // ADDING TEXT 
 
 // creating text-area / rectangle 
+let rectWidth;
 rectWidth = function () {
-    let fullName = document.getElementById("fullname");
-    let canvas = document.getElementById("myCanvas");
-    let context = canvas.getContext("2d");
-
-    let textWidth = fullName.addEventListener('keyup', function (event) {
-        let textWidth = context.measureText(fullName).width;
-        return textWidth;
-    })
     return (textWidth + 10);
 }
 
-drawRect();
-function drawRect () {
-    context.fillStyle = white;
-    context.rect(((600 - rectWidth) / 2), 245, (600 - ((600 - rectWidth) / 2)), 275);
-    context.stroke();
-    let clearRect = function () {
-        let fullName = document.getElementById("fullname");
-        let canvas = document.getElementById("myCanvas");
-        let context = canvas.getContext("2d");
+let textWidth;
+textWidth = fullname.addEventListener('keyup', function (event) {
+    let textWidth = context.measureText(fullname).width;
+    return textWidth;
+})
 
-        fullName.addEventListener('keyup', function(){
-            
-        })
-    }
+fullname.addEventListener('keyup', function () { drawRect() })
+
+function drawRect() {
+    let canvas = document.getElementById("myCanvas");
+    let context = canvas.getContext("2d");
+    context.fillStyle = "white";
+    context.rect(((600 - rectWidth) / 2), 245, (600 - ((600 - rectWidth) / 2)), 275);
+    context.strokeStyle = "black";
+    context.lineWidth = 5;
+    context.strokeRect(((600 - rectWidth) / 2), 245, (600 - ((600 - rectWidth) / 2)), 275);
+    context.stroke();
 }
 
 // creating gradient 
@@ -101,9 +98,6 @@ context.fillText("Aykhan Huseyn", canvas.width / 2, 260);
 addText();
 
 function addText() {
-    let fullName = document.getElementById("fullname");
-    let canvas = document.getElementById("myCanvas");
-    let context = canvas.getContext("2d");
     // creating gradient 
     let gradient = context.createLinearGradient(0, 0, canvas.width, 0);
     gradient.addColorStop("0", " magenta");
@@ -114,7 +108,7 @@ function addText() {
     context.font = "30px Arial";
     context.textAlign = "center";
 
-    fullName.addEventListener("keyup", function (event) {
+    fullname.addEventListener("keyup", function (event) {
         if (this) {
             //Add The text to canvas:
             context.fillText(this.value, canvas.width / 2, 260);
